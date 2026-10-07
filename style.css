@@ -1,0 +1,531 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #000;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   FONDO DE ESTRELLAS
+========================= */
+
+.stars,
+.stars2,
+.stars3 {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+.stars {
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px);
+    background-size: 90px 90px, 130px 130px;
+    background-position: 10px 20px, 50px 70px;
+    opacity: .7;
+}
+
+.stars2 {
+    background-image:
+        radial-gradient(#fff 1px, transparent 1px);
+    background-size: 170px 170px;
+    background-position: 30px 100px;
+    opacity: .4;
+}
+
+.stars3 {
+    background-image:
+        radial-gradient(#fff 2px, transparent 2px);
+    background-size: 250px 250px;
+    background-position: 100px 40px;
+    opacity: .25;
+}
+
+
+/* =========================
+   CONTENIDO
+========================= */
+
+main {
+    position: relative;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 70px 20px 100px;
+
+    text-align: center;
+}
+
+
+/* TÍTULO */
+
+h1 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(35px, 7vw, 75px);
+
+    line-height: 1.05;
+
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 0 10px white,
+        0 0 25px rgba(255,255,255,.7);
+
+    animation: aparecer 2s ease;
+}
+
+
+/* SUBTÍTULO */
+
+.subtitulo {
+    margin-top: 25px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #ddd;
+
+    animation: aparecer 3s ease;
+}
+
+
+/* =========================
+   UNIVERSO
+========================= */
+
+.universo {
+    position: relative;
+
+    width: 650px;
+    height: 400px;
+
+    max-width: 95vw;
+
+    margin-top: 50px;
+}
+
+
+/* SOL */
+
+.sol {
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #fffbd0,
+            #ffe36c 45%,
+            #e6a82f
+        );
+
+    border-radius: 50%;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    box-shadow:
+        0 0 30px #ffe36c,
+        0 0 70px #ffc928,
+        0 0 120px rgba(255,200,50,.4);
+
+    animation: brillo 3s infinite alternate;
+}
+
+
+/* PLANETAS */
+
+.planeta {
+    position: absolute;
+
+    border-radius: 50%;
+
+    box-shadow:
+        inset -15px -10px 20px rgba(0,0,0,.45),
+        0 0 15px rgba(255,255,255,.15);
+}
+
+
+/* planeta grande */
+
+.planeta1 {
+    width: 85px;
+    height: 85px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #c8c8c8,
+            #777,
+            #333
+        );
+
+    left: 12%;
+    top: 45%;
+}
+
+
+/* planeta azul */
+
+.planeta2 {
+    width: 55px;
+    height: 55px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #7899d8,
+            #26385e
+        );
+
+    right: 15%;
+    top: 48%;
+}
+
+
+/* planeta pequeño */
+
+.planeta3 {
+    width: 35px;
+    height: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #aaa,
+            #555
+        );
+
+    left: 30%;
+    top: 60%;
+}
+
+
+/* ÓRBITAS */
+
+.orbita {
+    position: absolute;
+
+    border: 1px solid rgba(255,255,255,.35);
+
+    border-radius: 50%;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.orbita1 {
+    width: 400px;
+    height: 180px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-5deg);
+}
+
+.orbita2 {
+    width: 570px;
+    height: 250px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(8deg);
+}
+
+
+/* =========================
+   FRASES
+========================= */
+
+.frases {
+    width: 100%;
+    max-width: 900px;
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin-top: -20px;
+
+    color: #ffd9b0;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   TARJETA
+========================= */
+
+.card {
+    margin-top: 80px;
+
+    width: 340px;
+    max-width: 90vw;
+
+    padding: 30px 25px 35px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.14),
+            rgba(255,120,190,.08)
+        );
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 0 30px rgba(255,100,190,.15),
+        inset 0 0 30px rgba(255,255,255,.04);
+
+    animation: flotar 4s ease-in-out infinite;
+}
+
+
+/* FOTO */
+
+.foto {
+    width: 210px;
+    height: 210px;
+
+    margin: auto;
+
+    padding: 8px;
+
+    background: rgba(255,255,255,.15);
+
+    border-radius: 20px;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+}
+
+
+/* TEXTO */
+
+.card h2 {
+    margin-top: 25px;
+
+    font-family: 'Pacifico', cursive;
+
+    font-size: 27px;
+
+    color: #ffb9dc;
+
+    text-shadow:
+        0 0 10px rgba(255,100,180,.6);
+}
+
+
+/* BOTÓN */
+
+button {
+    margin-top: 25px;
+
+    padding: 13px 35px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: linear-gradient(
+        90deg,
+        #ff72ae,
+        #ff3d83
+    );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 20px rgba(255,50,130,.4);
+
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 5px 35px rgba(255,50,130,.7);
+}
+
+
+/* =========================
+   MENSAJE
+========================= */
+
+.mensaje {
+    margin-top: 30px;
+
+    max-width: 350px;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    background: rgba(255,100,170,.15);
+
+    border: 1px solid rgba(255,150,210,.3);
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition: .5s;
+
+    pointer-events: none;
+}
+
+.mensaje.mostrar {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes brillo {
+
+    from {
+        box-shadow:
+            0 0 30px #ffe36c,
+            0 0 60px #ffc928;
+    }
+
+    to {
+        box-shadow:
+            0 0 45px #ffe36c,
+            0 0 100px #ffc928;
+    }
+
+}
+
+
+@keyframes flotar {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    main {
+        padding-top: 45px;
+    }
+
+    h1 {
+        font-size: 38px;
+        letter-spacing: 1px;
+    }
+
+    .subtitulo {
+        font-size: 14px;
+    }
+
+    .universo {
+        height: 300px;
+    }
+
+    .sol {
+        width: 95px;
+        height: 95px;
+    }
+
+    .planeta1 {
+        width: 60px;
+        height: 60px;
+    }
+
+    .planeta2 {
+        width: 40px;
+        height: 40px;
+    }
+
+    .planeta3 {
+        width: 25px;
+        height: 25px;
+    }
+
+    .orbita1 {
+        width: 300px;
+        height: 130px;
+    }
+
+    .orbita2 {
+        width: 400px;
+        height: 180px;
+    }
+
+    .frases {
+        font-size: 11px;
+    }
+
+    .card {
+        width: 310px;
+    }
+
+}
